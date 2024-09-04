@@ -8,17 +8,13 @@ def islower(c):
 def uppercase(str):
     i = 0
     char = ''
-
-    if not str:
-        return
     
     while i < len(str):
         if islower((str[i])):
             char = chr(ord(str[i]) - 32)
         else:
             char = str[i]
-        if i < len(str) - 1:
-            print("{}".format(char), end='')
-        else:
-            print("{}".format(chr(ord(str[i]) - 32)))
+
+        print("{}".format(char), end='')
         i += 1
+    print()
