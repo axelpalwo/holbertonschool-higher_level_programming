@@ -4,11 +4,10 @@ def islower(c):
         return True
     else:
         return False
-    
+
 def uppercase(str):
     i = 0
     char = ''
-    
     while i < len(str):
         if islower((str[i])):
             char = chr(ord(str[i]) - 32)
