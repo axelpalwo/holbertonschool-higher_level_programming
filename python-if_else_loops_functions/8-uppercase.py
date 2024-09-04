@@ -9,7 +9,7 @@ def uppercase(str):
     i = 0
     char = ''
 
-    if str == '':
+    if not str:
         return
     
     while i < len(str):
