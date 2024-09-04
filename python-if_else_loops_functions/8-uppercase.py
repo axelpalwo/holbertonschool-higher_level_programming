@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 def uppercase(str):
-    for i in len(str):
-        if i != len(str):
-            print("{}".format(ord(i) - 32), end='')
+    i = 0
+    while i < len(str):
+        if i < len(str) - 1:
+            print("{}".format(chr(ord(str[i]) - 32)), end='')
         else:
-            print("{}".format(ord(i) - 32))
+            print("{}".format(chr(ord(str[i]) - 32)))
+        i += 1
