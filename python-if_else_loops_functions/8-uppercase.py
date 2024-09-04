@@ -14,5 +14,5 @@ def uppercase(str):
             else:
                 print("{}".format(chr(ord(str[i]) - 32)))
         else:
-            print("{}".format(str[i]), end='')
+            print("{str[i]}", end='')
         i += 1
