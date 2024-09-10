@@ -3,6 +3,6 @@ def element_at(my_list, idx):
     if idx > len(my_list) - 1:
         return None
     elif idx >= 0:
-        return "Element at index {:d} is {:d}".format(idx, my_list[idx])
+        return (f"Element at index {idx} is {my_list[idx]}")
     else:
         return None
