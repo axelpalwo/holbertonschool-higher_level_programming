@@ -1,0 +1,1 @@
+This folder contains data structures tasks of lists, tuples, sets and dictionaries
