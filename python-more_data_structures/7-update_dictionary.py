@@ -7,6 +7,6 @@ def update_dictionary(a_dictionary, key, value):
             a_dictionary[okey] = value
         else:
             a_dictionary[okey] = a_dictionary[okey]
-    if repeat == False:
+    if repeat is False:
         a_dictionary[key] = value
     return a_dictionary
