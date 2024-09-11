@@ -6,8 +6,8 @@ def print_matrix_integer(matrix=[[]]):
             v = 0
             while v < len(matrix[i]):
                 if v == len(matrix[i]) - 1:
-                    print("{}".format(matrix[i][v]))
+                    print("{:d}".format(matrix[i][v]))
                 else:
-                    print("{}".format(matrix[i][v]), end=' ')
+                    print("{:d}".format(matrix[i][v]), end=' ')
                 v += 1
             i += 1
