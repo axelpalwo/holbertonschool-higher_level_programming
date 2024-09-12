@@ -7,8 +7,8 @@ def roman_to_int(roman_string):
         while i < len(roman_string):
             if i + 1 != len(roman_string):
                 if roman[roman_string[i]] < roman[roman_string[i + 1]]:
-                    subtotal = roman[roman_string[i + 1]] - roman[roman_string[i]]
-                    resultado += subtotal
+                    sub = roman[roman_string[i + 1]] - roman[roman_string[i]]
+                    resultado += sub
                     i += 2
                 else:
                     resultado += roman[roman_string[i]]
