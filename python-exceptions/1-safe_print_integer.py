@@ -5,4 +5,4 @@ def safe_print_integer(value):
         return True
     except:
         print("{} is not an integer".format(value))
-        return True
+        return False
