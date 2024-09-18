@@ -69,7 +69,8 @@ class Square:
         """
         firstbool = not all(x >= 0 for x in value)
         secbool = not all(isinstance(x, int) for x in value)
-        if (not isinstance(value, tuple) or len(value) != 2 or secbool or firstbool):
+        thirdbool = not isinstance(value, tuple)
+        if (thirdbool or len(value) != 2 or secbool or firstbool):
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
