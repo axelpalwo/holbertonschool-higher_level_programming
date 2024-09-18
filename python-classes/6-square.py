@@ -8,6 +8,7 @@ el tamaño del lado del cuadrado. Proporciona métodos para obtener
 y modificar el tamaño del cuadrado y para calcular su área.
 """
 
+
 class Square:
     """
     Clase Square que representa un cuadrado.
@@ -38,7 +39,7 @@ class Square:
         if size < 0:
             raise ValueError('size must be >= 0')
         if not (isinstance(position, tuple) and
-                len(position) == 2 and 
+                len(position) == 2 and
                 all(isinstance(x, int) for x in position) and
                 all(x >= 0 for x in position)):
             raise TypeError('position must be a tuple of 2 positive integers')
@@ -54,7 +55,7 @@ class Square:
         tuple: La posición del cuadrado en la cuadrícula.
         """
         return self.__position
-    
+
     @position.setter
     def position(self, value):
         """
@@ -67,9 +68,9 @@ class Square:
         TypeError: Si value no es una tupla de dos enteros positivos.
         """
         if (not isinstance(value, tuple) or
-            len(value) != 2 or
-            not all(isinstance(x, int) for x in value) or
-            not all(x >= 0 for x in value)):
+        len(value) != 2 or
+        not all(isinstance(x, int) for x in value) or
+        not all(x >= 0 for x in value)):
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
@@ -122,7 +123,7 @@ class Square:
 
         Ejemplo:
         Si __size es 3 y __position es (2, 1), el resultado será:
-        
+
           ###
           ###
           ###
@@ -132,6 +133,7 @@ class Square:
         wsp = 0
         lh = 0
         if self.__size != 0:
+            # Imprimir espacios en blanco para la posicion vertical
             while lh < self.__position[1]:
                 print()
                 lh += 1
