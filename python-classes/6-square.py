@@ -132,7 +132,7 @@ class Square:
         wsp = 0
         lh = 0
         if self.__size != 0:
-            while lh < position[1]:
+            while lh < self.__position[1]:
                 print()
                 lh += 1
             for i in range(self.__size):
