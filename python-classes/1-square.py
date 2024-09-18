@@ -25,5 +25,5 @@ class Square:
         size (int): El tamaño de un lado del cuadrado (opcional).
         Si no se proporciona, será None.
         """
-        self.__size = size  
+        self.__size = size
         # Atributo privado que almacena el tamaño del cuadrado
