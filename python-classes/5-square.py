@@ -75,10 +75,13 @@ class Square:
 
     def my_print(self):
         """
-        Imprime un cuadrado en la consola utilizando el carácter '#', de acuerdo con el tamaño actual.
+        Imprime un cuadrado en la consola utilizando el carácter '#',
+        de acuerdo con el tamaño actual.
 
-        Si el valor de __size es 0, no se imprime nada. De lo contrario, imprime un cuadrado formado
-        por filas y columnas del carácter '#', donde el número de filas y columnas es igual al valor 
+        Si el valor de __size es 0, no se imprime nada. De lo contrario,
+        imprime un cuadrado formado
+        por filas y columnas del carácter '#', donde el número de filas y
+        columnas es igual al valor 
         de __size.
 
         Ejemplo:
