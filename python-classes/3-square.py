@@ -2,16 +2,19 @@
 """
 Este módulo define una clase llamada Square.
 
-La clase Square está diseñada para representar un cuadrado y contiene un atributo
+La clase Square está diseñada para representar 
+un cuadrado y contiene un atributo
 privado llamado __size, que almacena el tamaño del lado del cuadrado.
 """
+
 
 class Square:
     """
     Clase Square que representa un cuadrado.
 
     Atributos:
-        __size (int): El tamaño de un lado del cuadrado, debe ser un entero >= 0.
+        __size (int): El tamaño de un lado del cuadrado,
+        debe ser un entero >= 0.
     """
 
     def __init__(self, size=0):
@@ -29,7 +32,8 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size  # Atributo privado que almacena el tamaño del cuadrado
+        self.__size = size
+        # Atributo privado que almacena el tamaño del cuadrado
 
     def area(self):
         """
