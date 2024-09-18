@@ -6,6 +6,8 @@ La clase Square es actualmente una implementación vacía,
 que sirve como base para
 futuras mejoras o expansiones relacionadas con cuadrados.
 """
+
+
 class Square:
     """
     Clase Square que representa un cuadrado.
