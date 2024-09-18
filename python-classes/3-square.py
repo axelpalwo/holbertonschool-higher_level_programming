@@ -2,7 +2,7 @@
 """
 Este módulo define una clase llamada Square.
 
-La clase Square está diseñada para representar 
+La clase Square está diseñada para representar
 un cuadrado y contiene un atributo
 privado llamado __size, que almacena el tamaño del lado del cuadrado.
 """
