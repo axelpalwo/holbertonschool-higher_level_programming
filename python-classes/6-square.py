@@ -68,10 +68,9 @@ class Square:
         TypeError: Si value no es una tupla de dos enteros positivos.
         """
         if (not isinstance(value, tuple) or
-            len(value) != 2 or
-            not all(isinstance(x, int) for x in value) or
+            len(value) != 2 or not all(isinstance(x, int) for x in value) or
             not all(x >= 0 for x in value)):
-                raise TypeError('position must be a tuple of 2 positive integers')
+            raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
     @property
