@@ -94,3 +94,5 @@ class Square:
                 for v in range(self.__size):
                     print('#', end='')
                 print()
+        else:
+            print()
