@@ -81,7 +81,7 @@ class Square:
         Si el valor de __size es 0, no se imprime nada. De lo contrario,
         imprime un cuadrado formado
         por filas y columnas del carácter '#', donde el número de filas y
-        columnas es igual al valor 
+        columnas es igual al valor
         de __size.
 
         Ejemplo:
