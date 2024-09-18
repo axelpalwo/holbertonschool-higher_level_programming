@@ -130,8 +130,13 @@ class Square:
         Si __size es 0, no se imprime nada.
         """
         wsp = 0
+        lh = 0
         if self.__size != 0:
+            while lh < position[1]:
+                print()
+                lh += 1
             for i in range(self.__size):
+
                 # Imprimir espacios en blanco para la posición horizontal
                 while wsp < self.__position[0]:
                     print(' ', end='')
