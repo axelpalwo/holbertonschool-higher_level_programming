@@ -26,8 +26,8 @@ class Square:
         Si no se proporciona, será None.
         """
         if not isinstance(size, int):
-            raise TypeError('Size must be an integer')
+            raise TypeError('size must be an integer')
         if size < 0:
-            raise ValueError('Size must b >= 0')
+            raise ValueError('size must be >= 0')
         self.__size = size
         # Atributo privado que almacena el tamaño del cuadrado
