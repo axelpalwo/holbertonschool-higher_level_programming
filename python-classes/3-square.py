@@ -32,4 +32,4 @@ class Square:
         self.__size = size
         # Atributo privado que almacena el tamaño del cuadrado
         def area(self):
-            return size
+            return size * size
