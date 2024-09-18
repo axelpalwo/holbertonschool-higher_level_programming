@@ -7,6 +7,7 @@ y tiene un atributo privado
 llamado __size que almacenará el tamaño del lado del cuadrado.
 """
 
+
 class Square:
     """
     Clase Square que representa un cuadrado.
@@ -24,4 +25,5 @@ class Square:
         size (int): El tamaño de un lado del cuadrado (opcional).
         Si no se proporciona, será None.
         """
-        self.__size = size  # Atributo privado que almacena el tamaño del cuadrado
+        self.__size = size  
+        # Atributo privado que almacena el tamaño del cuadrado
