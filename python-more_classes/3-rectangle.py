@@ -61,4 +61,6 @@ class Rectangle:
         return "\n".join(rectangle)
 
     def __repr__(self):
-        return f"<{self.__class__.__module__}.{self.__class__.__name__} object at {hex(id(self))}>"
+        main = self.__class__.__module__
+        name = self.__class__.__name__
+        return f"<{main}.{name} object at {hex(id(self))}>"
