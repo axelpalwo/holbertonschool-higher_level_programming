@@ -1,0 +1,1 @@
+Intermediate exercise for Python classes
