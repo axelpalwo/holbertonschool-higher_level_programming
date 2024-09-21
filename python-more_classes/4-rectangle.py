@@ -3,11 +3,13 @@
 Este módulo define una clase llamada Square.
 """
 
+
 # 0-Rectangle: Clase vacia
 class Rectangle:
     """
     Clase Square que representa un Rectangulo
     """
+
     # 1-Rectangle: __init__, setters & getters de width y height
     def __init__(self, width=0, height=0):
         if not isinstance(width, int):
@@ -44,6 +46,7 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
     # 2-Rectangle: Area y Perimetro
     def area(self):
         return self.__height * self.__width
@@ -52,6 +55,7 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         return (self.__height * 2) + (self.__width * 2)
+    
     # 3-Rectangle: __str__ y __repr__
     def __str__(self):
         if self.__height == 0 or self.__width == 0:
@@ -60,6 +64,7 @@ class Rectangle:
         for _ in range(self.__height):
             rectangle.append("#" * self.__width)
         return "\n".join(rectangle)
+    
     # 4-Rectangle: Debe devolver un string con lo necesario
     # para formar un nuevo objeto rectangulo
     def __repr__(self):
