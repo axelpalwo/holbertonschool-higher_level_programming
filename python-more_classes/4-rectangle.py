@@ -55,7 +55,7 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         return (self.__height * 2) + (self.__width * 2)
-    
+
     # 3-Rectangle: __str__ y __repr__
     def __str__(self):
         if self.__height == 0 or self.__width == 0:
@@ -64,7 +64,7 @@ class Rectangle:
         for _ in range(self.__height):
             rectangle.append("#" * self.__width)
         return "\n".join(rectangle)
-    
+
     # 4-Rectangle: Debe devolver un string con lo necesario
     # para formar un nuevo objeto rectangulo
     def __repr__(self):
