@@ -52,17 +52,14 @@ class Rectangle:
             return 0
         return (self.__height * 2) + (self.__width * 2)
 
-    def print(self):
-        if self.__height == 0 or self.__width == 0:
-            print("")
-            return
-        for _ in range(self.__height):
-            print("#" * self.__width)
-
-    def str(self):
+    def __str__(self):
         if self.__height == 0 or self.__width == 0:
             return ""
         rectangle = []
         for _ in range(self.__height):
             rectangle.append("#" * self.__width)
         return "\n".join(rectangle)
+
+    def __repr__(self):
+        return f"<{self.__class__.__module__}.{self.__class__.__name__} object at {hex(id(self))}>"
+
