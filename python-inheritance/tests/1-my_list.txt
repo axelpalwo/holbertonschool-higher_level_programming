@@ -1,9 +1,6 @@
 >>> my_list_module = __import__('1-my_list').MyList
 # Importamos el módulo '1_my_list' usando __import__ sin la extensión .py.
 
->>> MyList = my_list_module.MyList
-# Accedemos a la clase 'MyList' dentro del módulo '1_my_list'.
-
 # Test present: check instantiation
 >>> my_list = MyList()
 # Creamos una nueva instancia de MyList, una lista vacía.
