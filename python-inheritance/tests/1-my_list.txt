@@ -1,0 +1,27 @@
+>>> my_list_module = __import__('my_list')
+# Importamos el módulo 'my_list' usando __import__ y lo asignamos a 'my_list_module'.
+
+>>> MyList = my_list_module.MyList
+# Accedemos a la clase 'MyList' dentro del módulo 'my_list'.
+
+>>> my_list = MyList()
+# Creamos una nueva instancia de MyList, una lista vacía.
+
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+# Agregamos los elementos 1, 4, 2, 3, 5 a la lista.
+
+>>> print(my_list)
+# [1, 4, 2, 3, 5]
+# Imprime la lista original, que ahora contiene los elementos [1, 4, 2, 3, 5].
+
+>>> my_list.print_sorted()
+# [1, 2, 3, 4, 5]
+# Imprime la lista ordenada sin modificar la lista original. La lista se ordena temporalmente.
+
+>>> print(my_list)
+# [1, 4, 2, 3, 5]
+# Imprime nuevamente la lista original para demostrar que no ha cambiado, sigue siendo [1, 4, 2, 3, 5].
