@@ -1,59 +1,59 @@
->>> my_list_module = __import__('1-my_list').MyList
 # Importamos el módulo '1_my_list' usando __import__ sin la extensión .py.
+>>> MyList = __import__('1-my_list').MyList
 
 # Test present: check instantiation
 >>> my_list = MyList()
+
 # Creamos una nueva instancia de MyList, una lista vacía.
 >>> print(my_list)
 []
-# Verificamos que la lista esté vacía al momento de la instanciación.
 
 # Test present: check inherits from list
 >>> isinstance(my_list, list)
 True
-# Verificamos que MyList herede de list.
 
 # Test present: check __str__
 >>> str(my_list)
 '[]'
-# Verificamos que el método __str__ devuelve la representación correcta.
 
 # Test present: check append()
 >>> my_list.append(1)
+
 >>> my_list.append(4)
+
 >>> my_list.append(2)
+
 >>> my_list.append(3)
+
 >>> my_list.append(5)
-# Agregamos varios elementos a la lista.
+
 >>> print(my_list)
 [1, 4, 2, 3, 5]
-# Verificamos que los elementos se hayan agregado correctamente.
 
 # Test present: check print_sorted() with sorted append
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
-# Verificamos que print_sorted() ordena la lista correctamente.
 
 # Test present: check print_sorted() with not sorted append
 >>> my_list.append(0)
+
 >>> my_list.print_sorted()
 [0, 1, 2, 3, 4, 5]
-# Verificamos que el método ordena correctamente después de agregar un nuevo elemento no ordenado.
 
 # Test present: check print_sorted() with no sorted append with negative number
 >>> my_list.append(-1)
+
 >>> my_list.print_sorted()
 [-1, 0, 1, 2, 3, 4, 5]
-# Verificamos que el método maneja correctamente la adición de un número negativo.
 
 # Test present: check print_sorted() with empty list
 >>> empty_list = MyList()
+
 >>> empty_list.print_sorted()
 []
-# Verificamos que el método maneja correctamente una lista vacía.
 
 # Test present: check print_sorted() returns a new list
 >>> sorted_list = my_list.print_sorted()
+
 >>> sorted_list
-[1, 0, -1, 2, 3, 4, 5]
-# Verificamos que print_sorted() devuelve una nueva lista ordenada.
+[-1, 0, 1, 2, 3, 4, 5]
