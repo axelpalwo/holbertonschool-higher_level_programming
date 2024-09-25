@@ -1,4 +1,4 @@
->>> my_list_module = __import__('1-my_list').my_list_module
+>>> my_list_module = __import__('1-my_list').MyList
 # Importamos el módulo '1_my_list' usando __import__ sin la extensión .py.
 
 >>> MyList = my_list_module.MyList
