@@ -7,7 +7,6 @@ Returns: True in positive case
 
 def is_same_class(obj, a_class):
 
-
     '''
     Returns true or false if an obj is instance of a class
     '''
