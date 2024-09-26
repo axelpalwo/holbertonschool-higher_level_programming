@@ -14,13 +14,13 @@ Exception: area() is not implemented
 >>> my_base.integer_validator()
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 #Test present: integer_validator(“age”)
 >>> my_base.integer_validator("age")
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 #Test present: integer_validator(“age”, 1)
 >>> my_base.integer_validator("age", 1)
