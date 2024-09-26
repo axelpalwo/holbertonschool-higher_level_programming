@@ -1,0 +1,5 @@
+# Importamos el módulo '1_my_list' usando __import__ sin la extensión .py.
+>>> MyClass = __import__('7-base_geometry').BaseGeometry
+
+# Test present: check instantiation
+>>> my_base = MyClass()
