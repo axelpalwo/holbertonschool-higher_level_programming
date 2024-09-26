@@ -33,11 +33,13 @@ True
 # Test present: check print_sorted() with sorted append
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 
 # Test present: check print_sorted() with not sorted append
 >>> my_list.append(0)
 
 >>> my_list.print_sorted()
+[0, 1, 2, 3, 4, 5]
 [0, 1, 2, 3, 4, 5]
 
 # Test present: check print_sorted() with no sorted append with negative number
@@ -45,15 +47,17 @@ True
 
 >>> my_list.print_sorted()
 [-1, 0, 1, 2, 3, 4, 5]
+[-1, 0, 1, 2, 3, 4, 5]
 
 # Test present: check print_sorted() with empty list
 >>> empty_list = MyList()
 
 >>> empty_list.print_sorted()
 []
+[]
 
 # Test present: check print_sorted() returns a new list
 >>> sorted_list = my_list.print_sorted()
-
+[-1, 0, 1, 2, 3, 4, 5]
 >>> sorted_list
 [-1, 0, 1, 2, 3, 4, 5]
