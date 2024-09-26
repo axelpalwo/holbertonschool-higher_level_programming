@@ -10,20 +10,22 @@
 #Test present: integer_validator()
 >>> my_base.integer_validator()
 Traceback (most recent call last):
-    File "/usr/lib/python3.9/doctest.py", line 1336, in __run
+      File "/usr/lib/python3.9/doctest.py", line 1336, in __run
         exec(compile(example.source, filename, "single",
-    File "<doctest 7-base_geometry.txt[2]>", line 1, in <module>
+      File "<doctest 7-base_geometry.txt[2]>", line 1, in <module>
         my_base.integer_validator()
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+**********************************************************************
 
 #Test present: integer_validator(“age”)
 >>> my_base.integer_validator("age")
 Traceback (most recent call last):
-    File "/usr/lib/python3.9/doctest.py", line 1336, in __run
+      File "/usr/lib/python3.9/doctest.py", line 1336, in __run
         exec(compile(example.source, filename, "single",
-    File "<doctest 7-base_geometry.txt[3]>", line 1, in <module>
+      File "<doctest 7-base_geometry.txt[3]>", line 1, in <module>
         my_base.integer_validator("age")
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+**********************************************************************
 
 #Test present: integer_validator(“age”, 1)
 >>> my_base.integer_validator("age", 1)
