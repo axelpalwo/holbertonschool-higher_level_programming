@@ -48,8 +48,8 @@ TypeError: age must be an integer
 Traceback (most recent call last):
 TypeError: age must be an integer
 
-#Test present: integer_validator(“age”, True)
->>> my_base.integer_validator("age", True)
+#Test present: integer_validator(“age”,True)
+>>> my_base.integer_validator("age",True)
 
 #Test present: integer_validator(“age”, {3, 4})
 >>> my_base.integer_validator("age", {3, 4})
