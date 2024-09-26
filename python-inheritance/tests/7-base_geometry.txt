@@ -3,3 +3,55 @@
 
 # Test present: check instantiation
 >>> my_base = MyClass()
+
+#Test present: area()
+[Exception] area() is not implemented
+
+#Test present: integer_validator()
+>>> my_base.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+#Test present: integer_validator(“age”)
+>>> my_base.integer_validator("age")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+#Test present: integer_validator(“age”, 1)
+>>> my_base.integer_validator("age", 1)
+
+#Test present: integer_validator(“age”, 0)
+>>> my_base.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+#Test present: integer_validator(“age”, -4)
+>>> my_base.integer_validator("age", -4)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+#Test present: integer_validator(“age”, “4”)
+>>> my_base.integer_validator("age", 4)
+
+#Test present: integer_validator(“age”, (4,))
+>>> my_base.integer_validator("age", (4,))
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+#Test present: integer_validator(“age”, [3])
+>>> my_base.integer_validator("age", [3])
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+#Test present: integer_validator(“age”, True)
+>>> my_base.integer_validator("age", True)
+
+#Test present: integer_validator(“age”, {3, 4})
+>>> my_base.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+#Test present: integer_validator(“age”, None)
+>>> my_base.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
