@@ -6,6 +6,7 @@ Clase BaseGeometry
 
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
     """
     Clase Square que representa un Cuadrado
