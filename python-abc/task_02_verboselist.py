@@ -11,6 +11,7 @@ class VerboseList(list):
     def pop(self, value=-1):
         pop_value = super().pop(value)
         print(f"Popped {[pop_value]} from the list.")
+        return pop_value
 
     def extend(self, value):
         super().extend(value)
