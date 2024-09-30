@@ -17,8 +17,8 @@ class Student():
         if attrs is not None:
             new_vars = {}
             for att in attrs:
-                if hasattr(self, att): # Si el atributo existe
+                if hasattr(self, att):
                     # Conseguimos su valor y lo agregamos al dicc
-                    new_vars[att] = getattr(self, att) 
+                    new_vars[att] = getattr(self, att)
             return new_vars
         return vars(self)
