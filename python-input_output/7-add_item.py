@@ -21,7 +21,7 @@ loadFromJson = __import__('6-load_from_json_file').load_from_json_file
 filename = 'add_item.json'
 try:
     obj = loadFromJson(filename)
-except:
+except FileNotFoundError:
     obj = []
 
 i = 1
