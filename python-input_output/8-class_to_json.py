@@ -8,4 +8,4 @@ def class_to_json(obj):
     """
     We access the dir method of a Class
     """
-    return obj.__dir__
+    return vars(obj)
