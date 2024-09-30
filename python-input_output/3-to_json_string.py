@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Json library to convert obj into strings and string to objs
+"""
+
+
 import json
 """
 Converts an object into a string
