@@ -24,5 +24,5 @@ class Student():
         return vars(self)
 
     def reload_from_json(self, json):
-        for att, val in json:
+        for att, val in json.items():
             setattr(self, att, val)
