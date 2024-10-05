@@ -20,7 +20,9 @@ class CustomObject:
         try:
             with open(filename, "rb") as f:
                 return pickle.load(f)
-        except FileNotFoundError:
+        except EOFError:
+            print("El archivo que se desea abrir está vacío o corrupto.")
             return None
-        except FileExistsError:
+        except pickle.UnpicklingError:
+            print("Hubo un error con la deserealización.")
             return None
