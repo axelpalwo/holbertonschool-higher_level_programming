@@ -23,3 +23,6 @@ def fetch_and_save_posts():
                 writer.writerow({'id': data['id'], 'title': data['title'], 'body': data})
     else:
         print("Error with Fetch")
+
+fetch_and_print_posts()
+fetch_and_save_posts()
