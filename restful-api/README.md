@@ -1,0 +1,1 @@
+This folder contains RESTFUL API exercises

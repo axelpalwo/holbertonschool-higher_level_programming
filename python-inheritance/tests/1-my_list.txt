@@ -1,0 +1,63 @@
+# Importamos el módulo '1_my_list' usando __import__ sin la extensión .py.
+>>> MyList = __import__('1-my_list').MyList
+
+# Test present: check instantiation
+>>> my_list = MyList()
+
+# Creamos una nueva instancia de MyList, una lista vacía.
+>>> print(my_list)
+[]
+
+# Test present: check inherits from list
+>>> isinstance(my_list, list)
+True
+
+# Test present: check __str__
+>>> str(my_list)
+'[]'
+
+# Test present: check append()
+>>> my_list.append(1)
+
+>>> my_list.append(4)
+
+>>> my_list.append(2)
+
+>>> my_list.append(3)
+
+>>> my_list.append(5)
+
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# Test present: check print_sorted() with sorted append
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+
+# Test present: check print_sorted() with not sorted append
+>>> my_list.append(0)
+
+>>> my_list.print_sorted()
+[0, 1, 2, 3, 4, 5]
+[0, 1, 2, 3, 4, 5]
+
+# Test present: check print_sorted() with no sorted append with negative number
+>>> my_list.append(-1)
+
+>>> my_list.print_sorted()
+[-1, 0, 1, 2, 3, 4, 5]
+[-1, 0, 1, 2, 3, 4, 5]
+
+# Test present: check print_sorted() with empty list
+>>> empty_list = MyList()
+
+>>> empty_list.print_sorted()
+[]
+[]
+
+# Test present: check print_sorted() returns a new list
+>>> sorted_list = my_list.print_sorted()
+[-1, 0, 1, 2, 3, 4, 5]
+>>> sorted_list
+[-1, 0, 1, 2, 3, 4, 5]
