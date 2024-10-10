@@ -19,7 +19,6 @@ def fetch_and_save_posts():
         with open('posts.csv', mode='w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
             for data in res:
-                print({'id': data['id'], 'title': data['title'], 'body': data['body']})
                 writer.writerow({'id': data['id'], 'title': data['title'], 'body': data['body']})
     else:
         print("Error with Fetch")
