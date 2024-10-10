@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+users = {"jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"}, "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}}
 
 @app.route("/")
 def home():
@@ -10,7 +10,10 @@ def home():
 
 @app.route("/data")
 def data():
-    return jsonify(users)
+    user_list = []
+    for user in users:
+        user_list.append(user)
+    return jsonify(user_list)
 
 @app.route("/status")
 def status():
@@ -18,7 +21,9 @@ def status():
 
 @app.route("/users/<username>")
 def getUser(username):
-    return jsonify(users[username])
+    if username in users:
+        return jsonify(users[username])
+    return jsonify({"error": "User not found"})
 
 @app.route("/add_user", methods=['POST'])
 def addUser():
@@ -29,8 +34,8 @@ def addUser():
     age = data.get('age')
     city = data.get('city')
 
-    if username in users:
-        return jsonify({'message': 'Username already exists!'}), 400
+    if not isinstance(username, str) or not username:
+        return jsonify({"error":"Username is required"}), 400
     
     users[username] = {
         'name': name,
@@ -39,7 +44,7 @@ def addUser():
     }
 
     response = {
-        'message': 'User added successfully!',
+        'message': 'User added',
         'user': {
             'username': username,
             'name': name,
