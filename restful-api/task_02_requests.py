@@ -4,7 +4,7 @@ import csv
 
 def fetch_and_print_posts():
     res = requests.get('https://jsonplaceholder.typicode.com/todos')
-    print(res.status_code)
+    print(f"Status Code: {res.status_code}")
     if res.status_code == 200:
         res = res.json()
         for data in res:
