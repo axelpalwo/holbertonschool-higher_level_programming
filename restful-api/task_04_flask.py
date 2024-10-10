@@ -10,10 +10,7 @@ def home():
 
 @app.route("/data")
 def data():
-    user_list = []
-    for user in users:
-        user_list.append(user)
-    return jsonify(user_list)
+    return jsonify(list(users.keys()))
 
 @app.route("/status")
 def status():
@@ -38,6 +35,7 @@ def addUser():
         return jsonify({"error":"Username is required"}), 400
     
     users[username] = {
+        'username': username,
         'name': name,
         'age': age,
         'city': city
