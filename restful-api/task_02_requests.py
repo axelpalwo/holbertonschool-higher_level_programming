@@ -8,7 +8,7 @@ def fetch_and_print_posts():
     if res.status_code == 200:
         res = res.json()
         for data in res:
-            print(data.title)
+            print(data['title'])
     else:
         print("Error with Fetch")
 
