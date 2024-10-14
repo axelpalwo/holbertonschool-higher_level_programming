@@ -20,7 +20,7 @@ def status():
 def getUser(username):
     if username in users:
         return jsonify(users[username])
-    return jsonify({"error": "User not found"})
+    return jsonify({"error": "User not found"}), 400
 
 @app.route("/add_user", methods=['POST'])
 def addUser():
