@@ -1,53 +1,62 @@
-from flask import Flask, jsonify
-from flask_httpauth import HTTPBasicAuth, HTTPTokenAuth
+from flask import Flask, jsonify, abort, request
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity, get_jwt
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
-# Instanciamos las clases
-app = Flask(__name__)
-auth_basic = HTTPBasicAuth()
-auth_token = HTTPTokenAuth(scheme='Bearer')
 
-# Tokens
-app.config['SECRET_KEY'] = 'ULTRA SUPER MEGA SECRET KEY'
+# Instanciamos la Aplicacion
+app = Flask(__name__)
+
+# Clave secreta para los tokens
+app.config['JWT_SECRET_KEY'] = 'ULTRA SUPER MEGA SECRET KEY'
+
+# Instanciamos JWT Manager
+jwt = JWTManager(app)
 
 # Lista de usuarios
 users = {
-    "axel": generate_password_hash("holacomoestas"),
-    "sofia": generate_password_hash("bienyvos")
+    "axel": {
+        "username": "axel",
+        "password": generate_password_hash("holacomoestas"),
+        "role": "admin"
+    },
+    "sofia": {
+        "username": "sofia",
+        "password": generate_password_hash("bienyvos"),
+        "role": "user"
+    }
 }
 
-# Verifica contraseñas
-@auth_basic.verify_password
-def verify_password(username, password):
-    if username in users and \
-        check_password_hash(users.get(username), password): # Compara contraseñas
-        return username
-
+# Login endpoint
 @app.route("/login", methods=['POST'])
-@auth_basic.login_required
 def login():
-    user = auth_basic.current_user()
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    # Verificar si el usuario existe y la contraseña es correcta
+    if username not in users or not check_password_hash(users[username]["password"], password):
+        return jsonify({"msg": "Bad username or password"}), 401
 
-    token = jwt.encode({
-        'username': user
-    }, app.config['SECRET_KEY'], algorithm='HS256')
-    return jsonify({'token': token})
+    # Crear un token con la identidad del usuario y su rol
+    access_token = create_access_token(identity={"username": username, "role": users[username]["role"]})
+    return jsonify(access_token=access_token)
 
-@auth_token.verify_token
-def verify_token(token):
-    try:
-        data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
-        return data['username']
-    except jwt.ExpiredSignatureError:
-        return None
-    except jwt.InvalidTokenError:
-        return None
-    
-# Ruta root
-@app.route("/")
-@auth_token.login_required
+# Ruta protegida solo para administradores
+@app.route("/admin-only", methods=['GET'])
+@jwt_required()
+def admin_only():
+
+    current_user = get_jwt_identity()
+
+    if current_user['role'] != 'admin':
+        abort(403)
+
+    return jsonify({"message": "Admin Access: Granted"}), 200
+
+@app.route("/", methods=['GET'])
+@jwt_required()
 def index():
-    return "Hello, {}!".format(auth_token.current_user()) # Devuelve username si esta autorizado
+    # Obtener identidad del usuario desde el token JWT
+    current_user = get_jwt_identity()
+    return jsonify(logged_in_as=current_user), 200
 
 if __name__ == '__main__':
     app.run()
