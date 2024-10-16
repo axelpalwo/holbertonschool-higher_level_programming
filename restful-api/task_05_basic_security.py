@@ -14,13 +14,13 @@ jwt = JWTManager(app)
 auth = HTTPBasicAuth()
 # Lista de usuarios
 users = {
-    "axel": {
-        "username": "axel",
+    "user1": {
+        "username": "user1",
         "password": generate_password_hash("password"),
         "role": "admin"
     },
-    "sofia": {
-        "username": "sofia",
+    "user2": {
+        "username": "user2",
         "password": generate_password_hash("password"),
         "role": "user"
     }
