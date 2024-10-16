@@ -14,16 +14,8 @@ jwt = JWTManager(app)
 auth = HTTPBasicAuth()
 # Lista de usuarios
 users = {
-    "user1": {
-        "username": "user1",
-        "password": generate_password_hash("password"),
-        "role": "admin"
-    },
-    "user2": {
-        "username": "user2",
-        "password": generate_password_hash("password"),
-        "role": "user"
-    }
+    "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
+    "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
 }
 
 # Login endpoint
@@ -53,10 +45,10 @@ def admin_only():
 
     current_user = get_jwt_identity()
 
-    if current_user['role'] == 'admin':
-        return "Admin Access: Granted", 200
-    else:
+    if current_user['role'] != 'admin':
         return jsonify(error="Admin access required"), 403
+
+    return "Admin Access: Granted", 200
 
 @auth.verify_password
 def verify_password(username, password):
