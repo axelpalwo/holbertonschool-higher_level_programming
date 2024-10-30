@@ -1,3 +1,3 @@
 -- This show databases
 -- Databases
-show databases;
+SHOW databases;
