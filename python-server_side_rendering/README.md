@@ -1,0 +1,1 @@
+SSR exercises with Python
