@@ -60,7 +60,7 @@ def products():
     if products and product_id:
         products = [product for product in products if product["id"] == product_id]
         if not products:
-            error_message = f"Product with ID {product_id} not found."
+            error_message = "Product not found"
 
     return render_template('product_display.html', products=products, error_message=error_message)
 
